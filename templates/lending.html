@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lending Page</title>
+    <!-- Add your CSS files here -->
+</head>
+<body>
+    <h1>Loans</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Borrower</th>
+                <th>Amount</th>
+                <th>Interest Rate</th>
+                <th>Term</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for loan in loans %}
+                <tr>
+                    <td>{{ loan.borrower }}</td>
+                    <td>${{ loan.amount }}</td>
+                    <td>{{ loan.interest_rate }}%</td>
+                    <td>{{ loan.term }} months</td>
+                    <td>{{ loan.get_status_display }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+        
